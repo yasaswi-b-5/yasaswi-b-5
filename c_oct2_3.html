@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <form id="Information_details" action="https://www.google.com/">
+            <label for="">
+                Username
+                <input type="text" id="uname">
+                <p id="uname_err"></p>
+            </label><br>
+            <label for="">
+                Password
+                <input type="password" id ="pswd">
+                <p id="pswd_err"></p>
+            </label><br>
+            <label for="">
+                EMail
+                <input type="email">
+            </label><br>
+            <input type="submit" value="send">
+        </form>
+    <script>
+        document.querySelector("#Information_details").addEventListener("submit",validatedata);
+        function validatedata(event){
+            let uname,pswd,do_submit=true;
+            uname=document.querySelector("#uname").value;
+            pswd=document.querySelector("#pswd").value;
+            if(uname.length<4){
+             document.querySelector("#uname_err").innerText="Invalid username ";
+             document.querySelector("#uname_err").style.color="red";
+             do_submit=false;
+            }
+            if(pswd.length<8){
+                document.querySelector("#pswd_err").innerText="Invalid username ";
+                document.querySelector("#pswd_err").style.color="red";
+                do_submit=false;
+
+            }
+            if(do_submit==false){                                                                                  
+                event.preventDefault();
+            }
+           
+        }
+    </script>    
+    </body>
+</html>
