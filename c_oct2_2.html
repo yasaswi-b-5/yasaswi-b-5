@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <label for="">
+            <input type="checkbox" class="fruits" value="Apple">
+            Apple
+        </label><br>
+        <label for="">
+            <input type="checkbox" class="fruits" value="Orange">
+            Orange
+        </label><br>
+        <label for="">
+            <input type="checkbox" class="fruits" value="Banana">
+            Banana
+        </label><br>
+        <label for="">
+            <input type="checkbox" class="fruits" value="Mango">
+            Mango
+        </label><br><br><br>
+        <button class="btn">Add to cart</button>
+        <p id="output"></p>
+    <script>
+        document.querySelector('.btn').addEventListener('click',addtocart);
+        function addtocart(event){
+            let checkboxes,output='';
+            checkboxes=document.querySelectorAll('.fruits');
+            for(let box of checkboxes){
+                if(box.checked==true){    
+                    output=output+box.value+' ';
+                }
+            }
+            document.querySelector('#output').innerText=output;
+        }
+
+    </script>   
+
+    </body>
+</html>
